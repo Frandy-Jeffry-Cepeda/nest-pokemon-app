@@ -57,7 +57,9 @@ export class PokemonService {
     let pokemon: Pokemon | null = null;
 
     if (!isNaN(+term)) {
-      pokemon = await this.pokemonModel.findOne({no: term})
+      pokemon = await this.pokemonModel.findOne({
+        no: +term
+      })
     }
 
     // MongoID
